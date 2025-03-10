@@ -102,7 +102,7 @@ Recent Action In the Dashboard:
 
 👨‍💻 **Contributors**
 
-Md. Rakibul Islam – [GitHub Profile](https://github.com/rakib013)
-Nushrat Zahan - [GitHub Profile](https://github.com/neelunzn))
-Mohammad Tahmid Noor 
+Md. Rakibul Islam – [GitHub Profile](https://github.com/rakib013),
+Nushrat Zahan - [GitHub Profile](https://github.com/neelunzn),
+Mohammad Tahmid Noor, 
 Mahjabin Tasnim Samiha
