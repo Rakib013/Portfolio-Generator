@@ -81,7 +81,7 @@ Registration Page:
 Dashboard:
 ![dashboard](https://github.com/user-attachments/assets/70ce27e4-c16e-46a0-884d-db07b554345d)
 
-Uploading LaTex Code through Django Admin Pannel:
+Uploading LaTex Code through Django Admin Panel:
 ![templates-update](https://github.com/user-attachments/assets/0466e7b6-e6dd-4fa3-9302-b679073b559c)
 
 Available Templates:
@@ -93,16 +93,16 @@ Preview A Template:
 Update Profile Info:
 ![update-profile](https://github.com/user-attachments/assets/d557656f-bb88-437a-94c3-caa12f800336)
 
-Others Personal Info:
+Other Personal Info:
 ![others](https://github.com/user-attachments/assets/e9075498-4223-4745-ae2f-5aa3cf78ec0c)
 
-Recent Action In the dashboard:
+Recent Action In the Dashboard:
 ![download](https://github.com/user-attachments/assets/5dd70884-c446-41c6-93a3-db5d6d50e9fe)
 
 
 👨‍💻 **Contributors**
 
 Md. Rakibul Islam – [GitHub Profile](https://github.com/rakib013)
-Nushrat Zahaz - [GitHub Profile]((https://github.com/neelunzn))
-Mohammad Tahmid Noor - Idea Of the Application
-Mahjabin Tasnim Samiha - UI/UX Design
+Nushrat Zahan - [GitHub Profile](https://github.com/neelunzn))
+Mohammad Tahmid Noor 
+Mahjabin Tasnim Samiha
