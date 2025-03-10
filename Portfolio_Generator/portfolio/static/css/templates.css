@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background: #f4f4f4;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: #007bff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar .brand {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .auth-links a {
+    color: white;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.navbar .auth-links a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Choose Template Card */
+.choose-template-card {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.choose-template-card h2 {
+    margin-bottom: 20px;
+}
+
+/* Template Cards */
+.template-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.template-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 20px 0;
+}
+
+.template-card:hover {
+    transform: translateY(-10px);
+}
+
+.template-card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.template-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.template-card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.template-card-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.template-card-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.btn-logout {
+    background: red;
+}
+
+.btn-logout:hover {
+    background: darkred;
+}
+
+.btn-add-portfolio {
+    background: #28a745;
+}
+
+.btn-add-portfolio:hover {
+    background: #218838;
+}

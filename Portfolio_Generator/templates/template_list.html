@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Template</title>
+    <link rel="stylesheet" href="{% static 'css/templates.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">Portfolio Dashboard</div>
+        <div class="auth-links">
+            <a href="{% url 'portfolio:logout' %}" class="btn btn-logout">Logout</a>
+            <a href="{% url 'portfolio:dashboard' %}" class="btn">Dashboard</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="choose-template-card">
+            <h2>Choose a Template</h2>
+            <div class="template-cards">
+                {% for template in templates %}
+                    <div class="template-card">
+                        <div class="template-card-img">
+                            <img src="{{ template.preview_image.url }}" alt="Template Preview">
+                        </div>
+                        <div class="template-card-info">
+                            <h3>{{ template.name }}</h3>
+                            <p>{{ template.description }}</p>
+                            <a href="{% url 'portfolio:choose_template' template.id %}" class="btn">Create Portfolio</a>
+                            <!-- View Template Button -->
+                            <button class="btn view-template-btn" onclick="openPopup('{{ template.preview_image.url }}')">View Template</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(imageUrl) {
+            // Create the popup window
+            let popup = window.open("", "Template Preview", "width=500,height=500");
+
+            // Write content into the popup
+            popup.document.write(`
+                <html>
+                <head>
+                    <title>Template Preview</title>
+                    <style>
+                        body { 
+                            text-align: center; 
+                            margin: 0; 
+                            padding: 20px; 
+                            background: #f4f4f4; 
+                        }
+                        .popup-container {
+                            position: relative;
+                            display: inline-block;
+                        }
+                        .close-btn {
+                            position: absolute;
+                            top: -10px;
+                            right: -10px;
+                            background: red;
+                            color: white;
+                            border: none;
+                            padding: 5px 10px;
+                            font-size: 16px;
+                            cursor: pointer;
+                            border-radius: 50%;
+                        }
+                        img {
+                            max-width: 100%;
+                            height: auto;
+                            border-radius: 8px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="popup-container">
+                        <button class="close-btn" onclick="window.close()">×</button>
+                        <img src="${imageUrl}" alt="Template Preview">
+                    </div>
+                </body>
+                </html>
+            `);
+        }
+    </script>
+
+</body>
+</html>

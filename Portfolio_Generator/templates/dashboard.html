@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">Portfolio Dashboard</div>
+        <div class="auth-links">
+            <a href="{% url 'portfolio:logout' %}" class="btn btn-logout">Logout</a>
+            <a href="{% url 'portfolio:template_list' %}" class="btn">See Templates</a>
+            <a href="{% url 'portfolio:profile' %}" class="btn">Profile</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="choose-template-card">
+            <h2>Your Recent Action</h2>
+    
+            {% if templates %}
+                <div class="template-cards">
+                    {% for user_template in templates %}
+                        {% if user_template.template %}
+                            <div class="template-card">
+                                <div class="template-card-img">
+                                    <img src="{{ user_template.template.preview_image.url }}" alt="Template Preview">
+                                </div>
+                                <div class="template-card-info">
+                                    <h3>{{ user_template.template.name }}</h3>
+                                    <p>{{ user_template.template.description|default:"No description available." }}</p>
+                                    <a href="{% url 'portfolio:generate_pdf' user_template.template.id %}" class="btn">Download</a>
+                                </div>
+                            </div>
+                        {% else %}
+                            <p class="no-template">No template selected for this entry.</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="add-portfolio-card">
+                    <p>No portfolio found. Add your portfolio using the button below.</p>
+                    <a href="{% url 'portfolio:template_list' %}" class="btn btn-add-portfolio">Add Portfolio</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+
+</body>
+</html>

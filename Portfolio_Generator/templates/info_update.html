@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Create Your Portfolio</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="card p-4 mb-4">
+            <h4>Personal Information</h4>
+            {{ portfolio_form.as_p }}
+        </div>
+
+        <div class="card p-4 mb-4">
+            <h4>Skills</h4>
+            <input type="text" name="skills" class="form-control mb-2" placeholder="Skill (e.g. Python)">
+            <button type="button" class="btn btn-secondary" onclick="addSkill()">+ Add More</button>
+        </div>
+
+        <div class="card p-4 mb-4">
+            <h4>Academic Background</h4>
+            <input type="text" name="institute" class="form-control mb-2" placeholder="Institute">
+            <input type="text" name="degree" class="form-control mb-2" placeholder="Degree">
+            <input type="text" name="year_of_graduation" class="form-control mb-2" placeholder="Year">
+            <input type="text" name="grade" class="form-control mb-2" placeholder="Grade (Optional)">
+            <button type="button" class="btn btn-secondary" onclick="addEducation()">+ Add More</button>
+        </div>
+
+        <div class="card p-4 mb-4">
+            <h4>Work Experience</h4>
+            <input type="text" name="company_name" class="form-control mb-2" placeholder="Company Name">
+            <input type="text" name="job_duration" class="form-control mb-2" placeholder="Job Duration">
+            <textarea name="job_responsibilities" class="form-control mb-2" rows="3" placeholder="Job Responsibilities"></textarea>
+            <button type="button" class="btn btn-secondary" onclick="addExperience()">+ Add More</button>
+        </div>
+
+        <div class="card p-4 mb-4">
+            <h4>Projects</h4>
+            <input type="text" name="project_name" class="form-control mb-2" placeholder="Project Name">
+            <textarea name="project_description" class="form-control mb-2" rows="3" placeholder="Project Description"></textarea>
+            <button type="button" class="btn btn-secondary" onclick="addProject()">+ Add More</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </form>
+</div>
+
+<script>
+function addSkill() {
+    let input = '<input type="text" name="skills" class="form-control mb-2" placeholder="Skill">';
+    document.querySelector(".card:nth-child(2)").insertAdjacentHTML("beforeend", input);
+}
+function addEducation() {
+    let input = `<input type="text" name="institute" class="form-control mb-2" placeholder="Institute">
+                 <input type="text" name="degree" class="form-control mb-2" placeholder="Degree">
+                 <input type="text" name="year_of_graduation" class="form-control mb-2" placeholder="Year">
+                 <input type="text" name="grade" class="form-control mb-2" placeholder="Grade (Optional)">`;
+    document.querySelector(".card:nth-child(3)").insertAdjacentHTML("beforeend", input);
+}
+</script>
+{% endblock %}
