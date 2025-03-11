@@ -22,7 +22,7 @@ Portfolio Generator is a Django-based web application that allows users to creat
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/portfolio-generator.git
+    git clone https://github.com/rakib013/portfolio-generator.git
     cd portfolio-generator
     ```
 
