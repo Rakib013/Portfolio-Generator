@@ -84,7 +84,7 @@
                 <div class="success-message" id="register-success">
                     Registration successful! Please check your email.
                 </div>
-                <form method="POST" action="{% url 'portfolio:user_login' %}">
+                <form method="POST" action="{% url 'portfolio:user_register' %}">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="register-email">Username</label>
@@ -112,7 +112,7 @@
                         <label for="register-password">Password</label>
                         <div class="input-group">
                             <span class="input-icon">🔒</span>
-                            <input type="password"name="password1" id="register-password" class="form-control" placeholder="••••••••">
+                            <input type="password" name="password1" id="register-password" class="form-control" placeholder="••••••••">
                             <button type="button" class="password-toggle" onclick="togglePassword('register-password', this)">
                                 <span class="toggle-password-icon"></span>
                             </button>
