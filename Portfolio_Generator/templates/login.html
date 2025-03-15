@@ -1,32 +1,228 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    </head>
 <body>
-    <div class="login-container">
-        <div class="login-card">
-            <h2>Login</h2>
-
-            <form method="POST" action="{% url 'portfolio:user_login' %}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo">Portfolio<span style="color: var(--secondary)">Gen</span></div>
+            
+            <div class="form-tabs">
+                <div class="tab active" data-tab="login">Login</div>
+                <div class="tab" data-tab="register">Register</div>
+            </div>
+            
+            <div class="form login-form active" id="login-form">
+                <h2 class="form-title">Welcome back</h2>
+                <p class="form-subtitle">Enter your credentials to access your account</p>
+                
+                <div class="success-message" id="login-success">
+                    Login successful! Redirecting...
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">Login</button>
-            </form>
 
-            <p>Don't have an account? <a href="{% url 'portfolio:user_register' %}">Register</a></p>
+                <form method="POST" action="{% url 'portfolio:user_login' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="login-email">Username</label>
+                        <div class="input-group">
+                            <span class="input-icon">✉️</span>
+                            <input type="username" name="username" id="login-email" class="form-control" placeholder="username">
+                        </div>
+                        <div class="validation-message" id="login-email-error">
+                            Please enter a valid email address
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" name="password" id="login-password" class="form-control" placeholder="••••••••">
+                            <button type="button" class="password-toggle" onclick="togglePassword('login-password', this)">
+                                <span class="toggle-password-icon"></span>
+                            </button>
+                        </div>
+                        <div class="validation-message" id="login-password-error">
+                            Password is required
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        Sign In
+                    </button>
+                </form>
+                
+                <div class="social-login">
+                    <div class="social-login-text">Or continue with</div>
+                    <div class="social-buttons">
+                        <button class="social-btn">G</button>
+                        <button class="social-btn">F</button>
+                        <button class="social-btn">A</button>
+                    </div>
+                </div>
+                
+                <div class="switch-form">
+                    Don't have an account? <a href="#" id="switch-to-register">Sign up</a>
+                </div>
+            </div>
+            
+            <div class="form register-form" id="register-form">
+                <h2 class="form-title">Create an account</h2>
+                <p class="form-subtitle">Start your portfolio journey today</p>
+                
+                <div class="success-message" id="register-success">
+                    Registration successful! Please check your email.
+                </div>
+                <form method="POST" action="{% url 'portfolio:user_login' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="register-email">Username</label>
+                        <div class="input-group">
+                            <span class="input-icon">✉️</span>
+                            <input type="username" name="username" id="register-email" class="form-control" placeholder="username">
+                        </div>
+                        <div class="validation-message" id="register-email-error">
+                            Please enter a valid username address
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <div class="input-group">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" name="email" id="register-email" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <div class="validation-message" id="register-email-error">
+                            Please enter a valid email address
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password"name="password1" id="register-password" class="form-control" placeholder="••••••••">
+                            <button type="button" class="password-toggle" onclick="togglePassword('register-password', this)">
+                                <span class="toggle-password-icon"></span>
+                            </button>
+                        </div>
+                        <div class="validation-message" id="register-password-error">
+                            Password must be at least 8 characters
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" name="password2" id="register-confirm-password" class="form-control" placeholder="••••••••">
+                            <button type="button" class="password-toggle" onclick="togglePassword('register-confirm-password', this)">
+                                <span class="toggle-password-icon"></span>
+                            </button>
+                        </div>
+                        <div class="validation-message" id="register-confirm-password-error">
+                            Passwords do not match
+                        </div>
+                    </div>
+                    
+                    <div class="form-check" style="justify-content: flex-start; margin-top: 0.5rem;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="accept-terms">
+                            <label for="accept-terms">I agree to the <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Privacy Policy</a></label>
+                        </div>
+                    </div>
+                    <div class="validation-message" id="terms-error" style="margin-top: 0;">
+                        You must accept the terms to continue
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;">
+                        Create Account
+                    </button>
+                </form>
+                <div class="switch-form">
+                    Already have an account? <a href="{% url 'portfolio:user_login' %}" id="switch-to-login">Sign in</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <div class="image-overlay"></div>
+            <div class="image-text">
+                <h2>Build your professional portfolio today</h2>
+                <p>Join thousands of professionals who have boosted their careers with our easy-to-use portfolio platform.</p>
+            </div>
         </div>
     </div>
+    
+    <script>
+        // Tab switching
+        const tabs = document.querySelectorAll('.tab');
+        const forms = document.querySelectorAll('.form');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and forms
+                tabs.forEach(t => t.classList.remove('active'));
+                forms.forEach(f => f.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding form
+                tab.classList.add('active');
+                document.getElementById(`${tabId}-form`).classList.add('active');
+                
+                // Clear any validation messages and form fields
+                clearValidation();
+            });
+        });
+        
+        // Switch between login and register forms
+        document.getElementById('switch-to-register').addEventListener('click', function(e) {
+            e.preventDefault();
+            tabs[0].classList.remove('active');
+            tabs[1].classList.add('active');
+            
+            forms.forEach(f => f.classList.remove('active'));
+            document.getElementById('register-form').classList.add('active');
+            
+            clearValidation();
+        });
+        
+        document.getElementById('switch-to-login').addEventListener('click', function(e) {
+            e.preventDefault();
+            tabs[1].classList.remove('active');
+            tabs[0].classList.add('active');
+            
+            forms.forEach(f => f.classList.remove('active'));
+            document.getElementById('login-form').classList.add('active');
+            
+            clearValidation();
+        });
+        
+        // Toggle password visibility
+        function togglePassword(inputId, button) {
+            const input = document.getElementById(inputId);
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.querySelector('.toggle-password-icon').style.opacity = '0.7';
+            } else {
+                input.type = 'password';
+                button.querySelector('.toggle-password-icon').style.opacity = '1';
+            }
+        }
+        
+    </script>
 </body>
 </html>

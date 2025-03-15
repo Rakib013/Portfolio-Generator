@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator | Create Your Professional Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="{% url 'portfolio:landing' %}" class="logo">Portfolio<span style="color: var(--secondary)">Gen</span></a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <a href="{% url 'portfolio:user_login' %}" class="btn btn-primary">Get Started</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" style="display: none;">☰</button>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="{% url 'portfolio:user_login' %}" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">Get Started</a></li>
+        </ul>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <section class="hero">
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="hero-content fade">
+                <h1 class="heading-primary">Create Your <span>Professional Portfolio</span> in Minutes</h1>
+                <p class="hero-text">Build a stunning online portfolio without any coding skills. Stand out from the crowd with customizable templates designed for professionals across all industries.</p>
+                <div class="hero-buttons">
+                    <a href="#cta" class="btn btn-primary">Start Building Free</a>
+                    <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="display: flex;">
+                        <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: #ddd; border: 2px solid white; margin-left: -0.5rem; background-image: url('{% static 'images/logo.png' %}'); background-size: cover;"></div>
+                        <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: #ddd; border: 2px solid white; margin-left: -0.5rem; background-image: url('{% static 'images/logo.png' %}'); background-size: cover;"></div>
+                        <div style="width: 2rem; height: 2rem; border-radius: 50%; background-color: #ddd; border: 2px solid white; margin-left: -0.5rem; background-image: url('{% static 'images/logo.png' %}'); background-size: cover;"></div>
+                    </div>
+                    <span style="color: var(--gray);">Joined by <strong>10,000+</strong> professionals</span>
+                </div>
+            </div>
+            <div class="hero-image fade" style="animation-delay: 0.2s;">
+                <img src="{% static 'images/port.png' %}" alt="Portfolio Generator Preview">
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="heading-secondary fade">Create Your Dream Portfolio</h2>
+            <div class="feature-grid">
+                <div class="feature-card fade" style="animation-delay: 0.2s;">
+                    <div class="feature-icon purple">📝</div>
+                    <h3 class="feature-title">Easy to Use</h3>
+                    <p class="feature-text">Our intuitive drag-and-drop interface makes building your portfolio a breeze. No coding or design skills required.</p>
+                </div>
+                <div class="feature-card fade" style="animation-delay: 0.3s;">
+                    <div class="feature-icon orange">🎨</div>
+                    <h3 class="feature-title">Beautiful Templates</h3>
+                    <p class="feature-text">Choose from dozens of professionally designed templates that look great on all devices.</p>
+                </div>
+                <div class="feature-card fade" style="animation-delay: 0.4s;">
+                    <div class="feature-icon blue">⚡</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-text">Our portfolios load quickly and are optimized for performance to give your visitors the best experience.</p>
+                </div>
+                <div class="feature-card fade" style="animation-delay: 0.5s;">
+                    <div class="feature-icon purple">🔍</div>
+                    <h3 class="feature-title">SEO Optimized</h3>
+                    <p class="feature-text">Get found online with built-in SEO tools that help your portfolio rank higher in search results.</p>
+                </div>
+                <div class="feature-card fade" style="animation-delay: 0.6s;">
+                    <div class="feature-icon orange">📱</div>
+                    <h3 class="feature-title">Mobile Responsive</h3>
+                    <p class="feature-text">Your portfolio will look amazing on any device, from desktops to smartphones and everything in between.</p>
+                </div>
+                <div class="feature-card fade" style="animation-delay: 0.7s;">
+                    <div class="feature-icon blue">🔒</div>
+                    <h3 class="feature-title">Secure & Reliable</h3>
+                    <p class="feature-text">Rest easy knowing your portfolio is hosted on secure, reliable servers with 99.9% uptime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="heading-secondary fade">What Our Users Say</h2>
+            <div class="testimonial-slider fade" style="animation-delay: 0.2s;">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">"I had my portfolio up and running in less than an hour. The templates are gorgeous and I've received so many compliments on my site. It's helped me land three new clients already!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="{% static 'images/placeholder.png' %}" alt="Sarah Johnson">
+                        </div>
+                        <div>
+                            <div class="testimonial-name">Sarah Johnson</div>
+                            <div class="testimonial-job">Graphic Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="cta">
+        <div class="container">
+            <h2 class="cta-title fade">Ready to Showcase Your Work?</h2>
+            <p class="cta-text fade" style="animation-delay: 0.2s;">Join thousands of professionals who have boosted their careers with our portfolio platform. Get started for free today!</p>
+            <a href="{% url 'portfolio:user_login' %}" class="btn btn-primary fade" style="animation-delay: 0.3s;">Create Your Portfolio</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PortfolioGen</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 1rem;">Create professional portfolios in minutes without any coding skills.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IG</a>
+                        <a href="#">LI</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PortfolioGen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const overlay = document.getElementById('overlay');
+        
+        if (window.innerWidth <= 768) {
+            mobileMenuBtn.style.display = 'block';
+        }
+        
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
+                mobileMenuBtn.style.display = 'block';
+            } else {
+                mobileMenuBtn.style.display = 'none';
+            }
+        });
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        mobileMenuClose.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Testimonial slider functionality (for demo - would be more fully featured in production)
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                document.querySelector('.slider-dot.active').classList.remove('active');
+                dot.classList.add('active');
+                // In a full implementation, this would change the active testimonial
+            });
+        });
+        
+        // Fade-in animations on scroll
+        const fadeElements = document.querySelectorAll('.fade');
+        
+        // Initial check for elements in viewport
+        checkFadeElements();
+        
+        // Add fade-in effects on scroll
+        window.addEventListener('scroll', checkFadeElements);
+        
+        function checkFadeElements() {
+            const windowHeight = window.innerHeight;
+            
+            fadeElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

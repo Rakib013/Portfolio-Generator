@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class LaTeXTemplate(models.Model):
     name = models.CharField(max_length=255)
-    template_file = models.FileField(upload_to="latex_templates/")
+    template_file = models.TextField(blank=True)
     preview_image = models.ImageField(upload_to="template_previews/", null=True, blank=True)
 
     def __str__(self):
@@ -20,7 +20,7 @@ class UserPortfolio(models.Model):
     pdf_file = models.FileField(upload_to="generated_pdfs/", null=True, blank=True)  # PDF Storage
 
     def __str__(self):
-        return f"{self.user.username} - {self.template.name}"
+        return f"{self.user.username}"
         
 class Templates(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -19,7 +19,7 @@ class UserPortfolioForm(forms.ModelForm):
 class SkillForm(forms.ModelForm):
     class Meta:
         model = Skill
-        fields = ["skill_name"]
+        fields = ["skill_name"] 
         widgets = {'skill_name': forms.TextInput(attrs={'class': 'form-control'})}
 
 class AcademicBackgroundForm(forms.ModelForm):
