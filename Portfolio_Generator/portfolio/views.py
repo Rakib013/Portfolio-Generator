@@ -58,7 +58,7 @@ def user_logout(request):
 @login_required
 def dashboard(request):
     user_templates = Templates.objects.filter(user=request.user).select_related("template") 
-    templates = LaTeXTemplate.objects.all()[:]
+    templates = LaTeXTemplate.objects.all()
     profile, created = UserPortfolio.objects.get_or_create(user=request.user)
     return render(request, "dashboard.html", {"user_templates": user_templates, "templates": templates, "profile": profile})
 
