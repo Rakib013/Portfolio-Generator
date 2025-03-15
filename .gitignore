@@ -15,8 +15,6 @@ env/
 *.log
 *.pot
 *.pyc
-staticfiles/
-media/
 
 # IDE
 .vscode/

@@ -1,0 +1,8 @@
+Django>=4.0,<5.0
+django-environ  # For environment variable management
+reportlab  # PDF generation
+pylatex  # Handling LaTeX documents
+latex  # LaTeX processing (ensure you have LaTeX installed on your system)
+djangorestframework  # If you're using Django REST API
+gunicorn  # For deployment
+psycopg2-binary  # If using PostgreSQL, remove if using another DB
