@@ -1,4 +1,4 @@
-# Portfolio Generator
+![login](https://github.com/user-attachments/assets/8e2148e4-764a-43c0-92fe-ab987175a2ef)# Portfolio Generator
 
 Portfolio Generator is a Django-based web application that allows users to create professional portfolios using customizable LaTeX templates. Users can select a template, fill in their details, and download the generated LaTeX file.
 
@@ -65,40 +65,43 @@ Portfolio Generator is a Django-based web application that allows users to creat
 1. Sign up or log in.
 2. Select a template from the available options.
 3. Enter your portfolio details.
-4. Download the `.tex` file for customization or further compilation.
+4. Download the `.pdf` file of your portfolio.
 
-📷 **Screenshots** (Optional)
+📷 **Screenshots**
 
 Setting Up the Database and necessary commands to run the project
 ![initialize-the-database](https://github.com/user-attachments/assets/49cc605b-f842-4c2e-a589-874f79c6ec53)
 
+Landing Page:
+![Screenshot 2025-03-17 at 11 43 09 PM](https://github.com/user-attachments/assets/66ea0325-bd87-44bd-a60c-ab1eba8ec890)
+![Screenshot 2025-03-17 at 11 43 17 PM](https://github.com/user-attachments/assets/15f2a95d-1ff4-4001-aa72-f793f98f5c4c)
+![Screenshot 2025-03-17 at 11 43 29 PM](https://github.com/user-attachments/assets/06614625-6e5b-43c2-bfa3-d82f2b53e226)
+
 Login Page:
-![login](https://github.com/user-attachments/assets/93b09ddd-bf16-453a-8ec3-68ac0b2da6ee)
+![login](https://github.com/user-attachments/assets/6f16e5ef-c951-4efc-a69e-a8cb5e411658)
 
 Registration Page:
-![register](https://github.com/user-attachments/assets/4d88d911-8c8e-4694-afb5-9d613a2d153c)
+![register](https://github.com/user-attachments/assets/d610016e-f151-4396-8f51-4548d826546a)
 
 Dashboard:
-![dashboard](https://github.com/user-attachments/assets/70ce27e4-c16e-46a0-884d-db07b554345d)
+![dashboard-i](https://github.com/user-attachments/assets/9562ccfa-8e90-41bf-a347-8ae44d77d1b8)
+![dashboard-ii](https://github.com/user-attachments/assets/2f1a572a-1ac6-48e5-bd4a-750c554e0a7c)
 
-Uploading LaTex Code through Django Admin Panel:
-![templates-update](https://github.com/user-attachments/assets/0466e7b6-e6dd-4fa3-9302-b679073b559c)
-
-Available Templates:
-![available-templates](https://github.com/user-attachments/assets/f7db9821-5912-4ef4-b6ef-e0bc0e9f5d33)
 
 Preview A Template:
-![template-view](https://github.com/user-attachments/assets/bae40392-0fc8-4ce7-ad2b-472b1e89d44b)
+![Screenshot 2025-03-18 at 12 02 08 AM](https://github.com/user-attachments/assets/0aeb44bc-d556-4d37-873b-4cce0630cc4f)
+
+Delete or Download A chosen Template:
+![Screenshot 2025-03-18 at 12 02 16 AM](https://github.com/user-attachments/assets/8872af3c-af37-46e7-89ab-040c2a8a5d6a)
 
 Update Profile Info:
-![update-profile](https://github.com/user-attachments/assets/d557656f-bb88-437a-94c3-caa12f800336)
+![Screenshot 2025-03-17 at 11 44 24 PM](https://github.com/user-attachments/assets/e175f6c8-fd6d-4c8a-b724-63e4a5fa8012)
+![Screenshot 2025-03-17 at 11 44 39 PM](https://github.com/user-attachments/assets/51450ecb-237e-4d48-8af7-f657174407dd)
+![Screenshot 2025-03-17 at 11 44 47 PM](https://github.com/user-attachments/assets/a95d4266-e397-496b-8a88-9fc8476b0714)
 
-Other Personal Info:
-![others](https://github.com/user-attachments/assets/e9075498-4223-4745-ae2f-5aa3cf78ec0c)
-
-Recent Action In the Dashboard:
-![download](https://github.com/user-attachments/assets/5dd70884-c446-41c6-93a3-db5d6d50e9fe)
-
+Upload LaTex Code through Django Admin Panel:
+![Screenshot 2025-03-17 at 11 46 25 PM](https://github.com/user-attachments/assets/72f81748-962f-4c7b-abdf-50cf464fd3eb)
+![Screenshot 2025-03-17 at 11 46 32 PM](https://github.com/user-attachments/assets/a513c28e-9f75-4abd-8154-cb35182847b3)
 
 👨‍💻 **Contributors**
 
