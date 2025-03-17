@@ -93,6 +93,7 @@ Delete or Download A chosen Template:
 ![Screenshot 2025-03-18 at 12 02 16 AM](https://github.com/user-attachments/assets/8872af3c-af37-46e7-89ab-040c2a8a5d6a)
 
 Demo of a downloaded Portfolio PDF file:
+
 ![Screenshot 2025-03-18 at 12 10 12 AM](https://github.com/user-attachments/assets/334c6c0b-c6c0-4bf9-bcb3-df1a9f862780)
 
 Update Profile Info:
