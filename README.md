@@ -1,5 +1,3 @@
-![login](https://github.com/user-attachments/assets/8e2148e4-764a-43c0-92fe-ab987175a2ef)# Portfolio Generator
-
 Portfolio Generator is a Django-based web application that allows users to create professional portfolios using customizable LaTeX templates. Users can select a template, fill in their details, and download the generated LaTeX file.
 
 🚀 **Features**
@@ -7,7 +5,7 @@ Portfolio Generator is a Django-based web application that allows users to creat
 - 🔹 **User Authentication** – Register/Login functionality.
 - 🔹 **Template Selection** – Choose from multiple LaTeX templates.
 - 🔹 **Portfolio Management** – Users can create and manage multiple portfolios.
-- 🔹 **LaTeX File Generation** – Generates a `.tex` file with user-provided data.
+- 🔹 **PDF File Generation From Latex Code** – Generates a `.pdf` file with user-provided data.
 - 🔹 **Download Functionality** – Allows users to download the LaTeX file.
 
 🛠 **Tech Stack**
